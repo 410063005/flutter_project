@@ -1,0 +1,108 @@
+Flutter crash report; please file at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter --quiet assemble --depfile /Users/chenming/wd/flutter_android_template/flutter_project/.android/Flutter/build/intermediates/flutter/debug/flutter_build.d --output /Users/chenming/wd/flutter_android_template/flutter_project/.android/Flutter/build/intermediates/flutter/debug -dTargetFile=lib/main.dart -dTargetPlatform=android -dBuildMode=debug debug_android_application
+
+## exception
+
+ProcessException: ProcessException: The command failed
+  Command: unzip -o -q /Users/chenming/flutter/bin/cache/downloads/storage.googleapis.com/flutter_infra/flutter/ee76268252c22f5c11e82a7b87423ca3982e51a7/darwin-x64/artifacts.zip -d /Users/chenming/flutter/bin/cache/artifacts/engine/darwin-x64
+
+```
+#0      RunResult.throwException (package:flutter_tools/src/base/process.dart:172:5)
+#1      _DefaultProcessUtils.runSync (package:flutter_tools/src/base/process.dart:448:17)
+#2      _PosixUtils.unzip (package:flutter_tools/src/base/os.dart:218:19)
+#3      CachedArtifact._downloadArchive.<anonymous closure> (package:flutter_tools/src/cache.dart:619:16)
+#4      _rootRunUnary (dart:async/zone.dart:1192:38)
+#5      _CustomZone.runUnary (dart:async/zone.dart:1085:19)
+#6      _FutureListener.handleValue (dart:async/future_impl.dart:141:18)
+#7      Future._propagateToListeners.handleValueCallback (dart:async/future_impl.dart:682:45)
+#8      Future._propagateToListeners (dart:async/future_impl.dart:711:32)
+#9      Future._completeWithValue (dart:async/future_impl.dart:526:5)
+#10     _AsyncAwaitCompleter.complete (dart:async-patch/async_patch.dart:36:15)
+#11     _completeOnAsyncReturn (dart:async-patch/async_patch.dart:298:13)
+#12     Cache.downloadFile (package:flutter_tools/src/cache.dart)
+#13     _rootRunUnary (dart:async/zone.dart:1192:38)
+#14     _CustomZone.runUnary (dart:async/zone.dart:1085:19)
+#15     _FutureListener.handleValue (dart:async/future_impl.dart:141:18)
+#16     Future._propagateToListeners.handleValueCallback (dart:async/future_impl.dart:682:45)
+#17     Future._propagateToListeners (dart:async/future_impl.dart:711:32)
+#18     Future._completeWithValue (dart:async/future_impl.dart:526:5)
+#19     _AsyncAwaitCompleter.complete (dart:async-patch/async_patch.dart:36:15)
+#20     _completeOnAsyncReturn (dart:async-patch/async_patch.dart:298:13)
+#21     Net.fetchUrl (package:flutter_tools/src/base/net.dart)
+#22     _rootRunUnary (dart:async/zone.dart:1192:38)
+#23     _CustomZone.runUnary (dart:async/zone.dart:1085:19)
+#24     _FutureListener.handleValue (dart:async/future_impl.dart:141:18)
+#25     Future._propagateToListeners.handleValueCallback (dart:async/future_impl.dart:682:45)
+#26     Future._propagateToListeners (dart:async/future_impl.dart:711:32)
+#27     Future._completeWithValue (dart:async/future_impl.dart:526:5)
+#28     _AsyncAwaitCompleter.complete (dart:async-patch/async_patch.dart:36:15)
+#29     _completeOnAsyncReturn (dart:async-patch/async_patch.dart:298:13)
+#30     Net._attempt (package:flutter_tools/src/base/net.dart)
+#31     _rootRunUnary (dart:async/zone.dart:1192:38)
+#32     _CustomZone.runUnary (dart:async/zone.dart:1085:19)
+#33     _FutureListener.handleValue (dart:async/future_impl.dart:141:18)
+#34     Future._propagateToListeners.handleValueCallback (dart:async/future_impl.dart:682:45)
+#35     Future._propagateToListeners (dart:async/future_impl.dart:711:32)
+#36     Future._completeWithValue (dart:async/future_impl.dart:526:5)
+#37     Future._asyncComplete.<anonymous closure> (dart:async/future_impl.dart:556:7)
+#38     _rootRun (dart:async/zone.dart:1184:13)
+#39     _CustomZone.run (dart:async/zone.dart:1077:19)
+#40     _CustomZone.runGuarded (dart:async/zone.dart:979:7)
+#41     _CustomZone.bindCallbackGuarded.<anonymous closure> (dart:async/zone.dart:1019:23)
+#42     _microtaskLoop (dart:async/schedule_microtask.dart:43:21)
+#43     _startMicrotaskLoop (dart:async/schedule_microtask.dart:52:5)
+#44     _runPendingImmediateCallback (dart:isolate-patch/isolate_patch.dart:118:13)
+#45     _RawReceivePortImpl._handleMessage (dart:isolate-patch/isolate_patch.dart:169:5)
+```
+
+## flutter doctor
+
+```
+[✓] Flutter (Channel stable, v1.17.4, on Mac OS X 10.15.4 19E287, locale zh-Hans-CN)
+    • Flutter version 1.17.4 at /Users/chenming/flutter
+    • Framework revision 1ad9baa8b9 (11 days ago), 2020-06-17 14:41:16 -0700
+    • Engine revision ee76268252
+    • Dart version 2.8.4
+
+[✓] Android toolchain - develop for Android devices (Android SDK version 29.0.2)
+    • Android SDK at /Users/chenming/Library/Android/sdk/
+    • Platform android-29, build-tools 29.0.2
+    • ANDROID_HOME = /Users/chenming/Library/Android/sdk/
+    • Java binary at: /Applications/Android Studio 2.app/Contents/jre/jdk/Contents/Home/bin/java
+    • Java version OpenJDK Runtime Environment (build 1.8.0_242-release-1644-b3-6222593)
+    • All Android licenses accepted.
+
+[✓] Xcode - develop for iOS and macOS (Xcode 11.5)
+    • Xcode at /Applications/Xcode.app/Contents/Developer
+    • Xcode 11.5, Build version 11E608c
+    • CocoaPods version 1.9.1
+
+[✓] Android Studio (version 3.5)
+    • Android Studio at /Applications/Android Studio.app/Contents
+    • Flutter plugin version 42.1.1
+    • Dart plugin version 191.8593
+    • Java version OpenJDK Runtime Environment (build 1.8.0_202-release-1483-b49-5587405)
+
+[✓] Android Studio (version 4.0)
+    • Android Studio at /Applications/Android Studio 2.app/Contents
+    • Flutter plugin version 42.1.1
+    • Dart plugin version 191.8593
+    • Java version OpenJDK Runtime Environment (build 1.8.0_242-release-1644-b3-6222593)
+
+[✓] IntelliJ IDEA Community Edition (version 2019.2)
+    • IntelliJ at /Applications/IntelliJ IDEA CE.app
+    • Flutter plugin version 39.0.4
+    • Dart plugin version 192.8052
+
+[✓] VS Code (version 1.46.0)
+    • VS Code at /Applications/Visual Studio Code.app/Contents
+    • Flutter extension version 3.12.0
+
+[✓] Connected device (1 available)
+    • ANE AL00 • 8GP7N18531003308 • android-arm64 • Android 8.0.0 (API 26)
+
+• No issues found!
+```
